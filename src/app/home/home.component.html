@@ -1,0 +1,95 @@
+<app-header></app-header>
+<div class="home-container">
+   <div class="all-songs">
+      <div class="trending-songs">
+         <div class="top">
+            <h4>Trending Songs</h4>
+            <div class="view-all" (click)="toggleViewTrending()">View All</div>
+         </div>
+         <div class="songs-thumbnail">
+            <div class="song" *ngFor="let song of visibleTrendingSongs">
+               <div class="cover" (click)="goToSong('trending',song.id)">
+                  <img [src]="song.cover" alt="">
+               </div>
+               <div class="details">
+                  <div class="name">{{song.name}}</div>
+                  <div class="rating">
+                     <app-star-rating [rating]="song.rating" [isReadOnly]="true"></app-star-rating>
+                     <span class="rating-value">{{song.rating}}</span>
+                   </div>
+               </div>
+            </div>
+            <div *ngIf="showTrending" class="hidden-songs">
+               <div class="song" *ngFor="let song of hiddenTrendingSongs">
+                  <div class="cover" (click)="goToSong('trending',song.id)">
+                     <img [src]="song.cover" alt="">
+                  </div>
+                  <div class="details">
+                     <div class="name">{{song.name}}</div>
+                     <div class="rating">
+                        <app-star-rating [rating]="song.rating" [isReadOnly]="true"></app-star-rating>
+                        <span class="rating-value">{{song.rating}}</span>
+                      </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="album-songs">
+         <div class="top">
+            <h4>Album Songs</h4>
+            <div class="view-all" (click)="toggleViewAlbum()">View All</div>
+         </div>
+         <div class="songs-thumbnail">
+            <div class="song" *ngFor="let song of visibleAlbumSongs">
+               <div class="cover" (click)="goToSong('album',song.id)">
+                  <img [src]="song.cover" alt="">
+               </div>
+               <div class="details">
+                  <div class="name">{{song.name}}</div>
+                  <div class="rating">
+                     <app-star-rating [rating]="song.rating" [isReadOnly]="true"></app-star-rating>
+                     <span class="rating-value">{{song.rating}}</span>
+                   </div>
+               </div>
+            </div>
+            <div *ngIf="showAlbum" class="hidden-songs">
+               <div class="song" *ngFor="let song of hiddenAlbumSongs">
+                  <div class="cover" (click)="goToSong('album',song.id)">
+                     <img [src]="song.cover" alt="">
+                  </div>
+                  <div class="details">
+                     <div class="name">{{song.name}}</div>
+                     <div class="rating">
+                        <app-star-rating [rating]="song.rating" [isReadOnly]="true"></app-star-rating>
+                        <span class="rating-value">{{song.rating}}</span>
+                      </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="popular-songs">
+      <h4>All time Popular Songs</h4>
+      <div class="songs">
+         <div class="song" *ngFor="let song of visiblePopularSongs">
+               <div class="name" (click)="goToSong('popular',song.id)">{{song.name}}</div>
+               <div class="rating">
+                  <app-star-rating [rating]="song.rating" [isReadOnly]="true"></app-star-rating>
+                  <span class="rating-value">{{song.rating}}</span>
+                </div>
+         </div>
+         <div *ngIf="showPopular" class="hidden-songs">
+            <div class="song" *ngFor="let song of hiddenPopularSongs">
+               <div class="name" (click)="goToSong('popular',song.id)">{{song.name}}</div>
+               <div class="rating">
+                  <app-star-rating [rating]="song.rating" [isReadOnly]="true"></app-star-rating>
+                  <span class="rating-value">{{song.rating}}</span>
+                </div>
+         </div>
+         </div>
+         <div class="view-all" (click)="toggleViewPopular()">View All</div>
+      </div>
+   </div>
+</div>

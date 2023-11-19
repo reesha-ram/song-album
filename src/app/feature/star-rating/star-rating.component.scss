@@ -1,0 +1,10 @@
+.stars {
+    display: flex;
+    align-items: center;
+    .star {
+        color: gold;
+        font-size: 15px;
+        margin-right: 1px; /* Adjusted margin for 1px space */
+      }
+}
+

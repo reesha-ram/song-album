@@ -1,0 +1,159 @@
+.home-container {
+    display: flex;
+
+    .all-songs {
+        width: 75%;
+        min-height: calc(100vh - 80px);
+        border-right: 1px solid #fdc827;
+        padding: 20px 40px;
+        font-family: "Roboto", san-serif;
+
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h4 {
+                text-transform: uppercase;
+                font-weight: bold;
+                border-left: 5px solid #ff9900;
+                padding-left: 10px;
+            }
+
+            .view-all {
+                color: #ff9900;
+                cursor: pointer;
+            }
+        }
+
+        .songs-thumbnail {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+
+            /* Allow the items to wrap to the next line if there's not enough space */
+            .song {
+                width: calc(24% - 10px);
+                /* Adjust the width as needed with margin */
+                margin-bottom: 10px;
+                /* Add margin between items */
+                box-sizing: border-box;
+
+                /* Include padding and border in the element's total width and height */
+                .cover {
+                    img {
+                        border-radius: 5px;
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+
+                .details {
+                    width: 180px;
+
+                    .name {
+                        font-weight: bold;
+                        height: 20px;
+                        margin-top: 5px;
+                        cursor: pointer;
+                        margin-bottom: 1px;
+                        /* Add a small margin below the name */
+                    }
+                }
+            }
+
+            .hidden-songs {
+                width: 100%;
+                /* Occupy the full width */
+                display: flex;
+                flex-wrap: wrap;
+                /* Allow items to wrap to the next line if needed */
+                justify-content: flex-start;
+                /* Adjust as needed */
+                margin-top: 20px;
+
+                /* Add margin between visible and hidden songs */
+                .song {
+                    width: calc(24% - 10px);
+                    /* Adjust the width as needed with margin */
+                    margin-bottom: 10px;
+                    /* Add margin between items */
+                    box-sizing: border-box;
+
+                    /* Include padding and border in the element's total width and height */
+                    .cover {
+                        img {
+                            border-radius: 5px;
+                            width: 100px;
+                            height: 100px;
+                        }
+                    }
+
+                    .details {
+                        width: 180px;
+
+                        .name {
+                            font-weight: bold;
+                            height: 20px;
+                            margin-top: 5px;
+                            cursor: pointer;
+                            margin-bottom: 1px;
+                            /* Add a small margin below the name */
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .popular-songs {
+        width: 25%;
+        min-height: calc(100vh - 80px);
+        padding: 20px 40px;
+        font-family: "Roboto", san-serif;
+
+        h4 {
+            text-transform: uppercase;
+            font-weight: bold;
+            border-left: 5px solid #ff9900;
+            padding-left: 10px;
+        }
+
+        .songs {
+            .song {
+                margin-top: 30px;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .name {
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+            }
+
+            .view-all {
+                color: #ff9900;
+                text-align: right;
+                margin-top: 30px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.rating {
+    font-size: 14px;
+    color: #ff9900;
+    display: flex;
+    align-items: center;
+
+    .rating-value {
+        margin-left: 10px;
+        /* Adjusted margin for 1px space */
+        font-weight: bold;
+        font-size: 10px;
+    }
+}
